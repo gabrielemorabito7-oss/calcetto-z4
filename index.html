@@ -461,7 +461,7 @@
 
   /* ── scoring ── */
   function calcTotal(p) {
-    return p.presenze + (p.vittorie * 3) + p.pareggi + p.motm + p.punti_bonus;
+    return p.presenze + (p.vittorie * 3) + p.pareggi + p.motm + p.punti_bonus + (p.gol || 0) + (p.assist || 0);
   }
   function fmt(v) { return v === 0 ? '<span class="dim">—</span>' : v; }
 
