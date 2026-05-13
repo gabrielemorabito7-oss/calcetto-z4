@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚽ Calcetto Z4</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #07120f;
+      color: #e8f5e8;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(160deg, #0b2e14, #133d1b);
+      padding: 28px 20px 20px;
+      text-align: center;
+      border-bottom: 3px solid #27ae4a;
+      position: relative;
+    }
+    header h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      color: #27ae4a;
+      letter-spacing: 1px;
+      text-shadow: 0 0 20px rgba(39,174,74,0.4);
+    }
+    header .season {
+      color: #8db89a;
+      margin-top: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* ── META BAR ── */
+    .meta-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 28px;
+      padding: 12px 20px;
+      background: #0b1e12;
+      font-size: 0.78rem;
+      color: #7aa87a;
+      border-bottom: 1px solid #152a1a;
+    }
+    .meta-bar b { color: #27ae4a; }
+
+    /* ── TOGGLE ── */
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px 20px 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .toggle-btn {
+      background: none;
+      border: 1px solid #27ae4a44;
+      color: #7aa87a;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .toggle-btn:hover { border-color: #27ae4a; color: #27ae4a; }
+
+    /* ── TABLE ── */
+    .table-wrap {
+      overflow-x: auto;
+      padding: 12px 20px 30px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead tr {
+      background: #0f2a17;
+    }
+    th {
+      color: #27ae4a;
+      padding: 11px 10px;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      white-space: nowrap;
+      border-bottom: 2px solid #1a4025;
+    }
+    th.left, td.left { text-align: left; padding-left: 14px; }
+    td {
+      padding: 10px 10px;
+      text-align: center;
+      border-bottom: 1px solid #112018;
+      transition: background 0.15s;
+    }
+    tbody tr:hover td { background: #0d2416; }
+
+    /* separator for zero-presenze rows */
+    tr.separator td {
+      border-top: 1px dashed #1a3020;
+      padding-top: 6px;
+    }
+
+    .pos-cell { font-weight: 700; color: #5a8a5a; min-width: 36px; }
+    .gold   { color: #ffd700; font-size: 1.15rem; }
+    .silver { color: #c0c0c0; font-size: 1.05rem; }
+    .bronze { color: #cd7f32; font-size: 1.05rem; }
+
+    .name { font-weight: 600; color: #d4f0d4; }
+    .pts-cell { font-weight: 800; font-size: 1rem; color: #27ae4a; }
+    .dim { color: #3a6040; }
+
+    /* ── BONUS BADGE ── */
+    .bonus-row td { background: #0a1f12 !important; }
+    .bonus-badge {
+      display: inline-block;
+      background: #1a4820;
+      color: #27ae4a;
+      border: 1px solid #27ae4a55;
+      border-radius: 12px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    /* ── MOTM SECTION ── */
+    .motm-section {
+      max-width: 960px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+    }
+    .motm-section h3 {
+      color: #27ae4a;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #1a3020;
+    }
+    .motm-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .motm-card {
+      background: #0f2a17;
+      border: 1px solid #1a4025;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .motm-card .star { color: #ffd700; }
+    .motm-card .count {
+      background: #1a4820;
+      color: #27ae4a;
+      border-radius: 10px;
+      padding: 1px 7px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    /* ── RULES ── */
+    .rules-section {
+      max-width: 960px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    .rules-section h3 {
+      color: #27ae4a;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #1a3020;
+    }
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 6px;
+    }
+    .rule-item {
+      background: #0b1e12;
+      border: 1px solid #152a1a;
+      border-radius: 6px;
+      padding: 7px 12px;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .rule-item .badge {
+      color: #27ae4a;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .rule-item .badge.neg { color: #e74c3c; }
+
+    .bonus-rules {
+      margin-top: 12px;
+      background: #0b1e12;
+      border: 1px solid #27ae4a33;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: #8db89a;
+    }
+    .bonus-rules b { color: #27ae4a; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #3a5a3a;
+      font-size: 0.72rem;
+    }
+
+    @media (max-width: 480px) {
+      th, td { padding: 9px 6px; font-size: 0.8rem; }
+      .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⚽ Calcetto Z4</h1>
+  <div class="season" id="season-label">Caricamento...</div>
+</header>
+
+<div class="meta-bar">
+  <span>Partite giocate: <b id="meta-partite">—</b></span>
+  <span>Prossima bonus: partita <b id="meta-bonus">—</b></span>
+  <span>Aggiornato: <b id="meta-updated">—</b></span>
+</div>
+
+<div class="controls">
+  <button class="toggle-btn" id="toggle-zero">Mostra tutti i giocatori</button>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th class="left">Giocatore</th>
+        <th title="Presenze">PG</th>
+        <th title="Vittorie">V</th>
+        <th title="Pareggi" class="hide-mobile">P</th>
+        <th title="Sconfitte">S</th>
+        <th title="Man of the Match">MoTM</th>
+        <th title="Punti Bonus" class="hide-mobile">Bonus</th>
+        <th>PTS</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<div class="motm-section" id="motm-section" style="display:none">
+  <h3>⭐ Man of the Match</h3>
+  <div class="motm-grid" id="motm-grid"></div>
+</div>
+
+<div class="rules-section">
+  <h3>📋 Regolamento punti</h3>
+  <div class="rules-grid">
+    <div class="rule-item"><span>Presenza</span><span class="badge">+1 pt</span></div>
+    <div class="rule-item"><span>Vittoria</span><span class="badge">+3 pt</span></div>
+    <div class="rule-item"><span>Pareggio</span><span class="badge">+1 pt</span></div>
+    <div class="rule-item"><span>Sconfitta</span><span class="badge">0 pt</span></div>
+    <div class="rule-item"><span>Man of the Match</span><span class="badge">+1 pt</span></div>
+    <div class="rule-item"><span>Rigore Parato</span><span class="badge">+2 pt</span></div>
+    <div class="rule-item"><span>Gol da Punizione</span><span class="badge">+1 pt</span></div>
+    <div class="rule-item"><span>Gol di Testa/Rovesciata</span><span class="badge">+2 pt</span></div>
+    <div class="rule-item"><span>Palloni Persi</span><span class="badge neg">-1 pt</span></div>
+    <div class="rule-item"><span>Autogol</span><span class="badge neg">-2 pt</span></div>
+  </div>
+  <div class="bonus-rules">
+    <b>🎁 Ogni 3 partite — Partita Bonus</b><br>
+    1️⃣ <b>Gol/Assist:</b> ogni gol o assist +1 pt · Portiere: 0-3 gol subiti +3pt, 4-5 +2pt, 6+ +1pt<br>
+    2️⃣ <b>Raddoppio:</b> punti vittoria valgono doppio (6pt) · MoTM vale doppio (2pt)<br>
+    3️⃣ <b>Draft:</b> 1° e ultimo in classifica scelgono le squadre a turno
+  </div>
+</div>
+
+<footer>Calcetto Z4 · Classifica live · Solo lettura per tutti</footer>
+
+<script>
+  let showAll = false;
+  let allPlayers = [];
+
+  const toggle = document.getElementById('toggle-zero');
+  toggle.addEventListener('click', () => {
+    showAll = !showAll;
+    toggle.textContent = showAll ? 'Nascondi chi non ha giocato' : 'Mostra tutti i giocatori';
+    renderTable();
+  });
+
+  function calcTotal(p) {
+    return p.presenze + (p.vittorie * 3) + p.pareggi + p.motm + p.punti_bonus;
+  }
+
+  function fmt(v) {
+    return v === 0 ? '<span class="dim">—</span>' : v;
+  }
+
+  function renderTable() {
+    const sorted = [...allPlayers]
+      .map(p => ({ ...p, total: calcTotal(p) }))
+      .sort((a, b) => b.total - a.total || b.presenze - a.presenze || a.name.localeCompare(b.name));
+
+    const active = sorted.filter(p => p.presenze > 0);
+    const inactive = sorted.filter(p => p.presenze === 0);
+
+    const tbody = document.getElementById('tbody');
+    tbody.innerHTML = '';
+
+    let rank = 1;
+    let prevTotal = null;
+    let shownRank = 1;
+
+    active.forEach((p, i) => {
+      if (p.total !== prevTotal) { shownRank = rank; }
+      prevTotal = p.total;
+      rank++;
+
+      let posDisplay;
+      if (shownRank === 1) posDisplay = '<span class="gold">🥇</span>';
+      else if (shownRank === 2) posDisplay = '<span class="silver">🥈</span>';
+      else if (shownRank === 3) posDisplay = '<span class="bronze">🥉</span>';
+      else posDisplay = `<span class="pos-cell">${shownRank}</span>`;
+
+      tbody.innerHTML += `<tr>
+        <td>${posDisplay}</td>
+        <td class="name left">${p.name}</td>
+        <td>${fmt(p.presenze)}</td>
+        <td>${fmt(p.vittorie)}</td>
+        <td class="hide-mobile">${fmt(p.pareggi)}</td>
+        <td>${fmt(p.sconfitte)}</td>
+        <td>${fmt(p.motm)}</td>
+        <td class="hide-mobile">${fmt(p.punti_bonus)}</td>
+        <td class="pts-cell">${p.total}</td>
+      </tr>`;
+    });
+
+    if (showAll && inactive.length > 0) {
+      inactive.forEach((p, i) => {
+        const sepClass = i === 0 ? ' separator' : '';
+        tbody.innerHTML += `<tr class="${sepClass}">
+          <td><span class="dim">—</span></td>
+          <td class="name left dim">${p.name}</td>
+          <td><span class="dim">—</span></td>
+          <td><span class="dim">—</span></td>
+          <td class="hide-mobile"><span class="dim">—</span></td>
+          <td><span class="dim">—</span></td>
+          <td><span class="dim">—</span></td>
+          <td class="hide-mobile"><span class="dim">—</span></td>
+          <td class="dim">0</td>
+        </tr>`;
+      });
+    }
+  }
+
+  function renderMotm() {
+    const withMotm = allPlayers.filter(p => p.motm > 0)
+      .sort((a, b) => b.motm - a.motm);
+    const section = document.getElementById('motm-section');
+    if (withMotm.length === 0) { section.style.display = 'none'; return; }
+    section.style.display = 'block';
+    const grid = document.getElementById('motm-grid');
+    grid.innerHTML = withMotm.map(p =>
+      `<div class="motm-card"><span class="star">⭐</span>${p.name}<span class="count">x${p.motm}</span></div>`
+    ).join('');
+  }
+
+  fetch('data.json?t=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('season-label').textContent = data.stagione || 'Classifica Live';
+      document.getElementById('meta-partite').textContent = data.partite_giocate ?? 0;
+      document.getElementById('meta-updated').textContent = data.last_updated ?? '—';
+
+      const pg = data.partite_giocate ?? 0;
+      const nextBonus = pg + (3 - (pg % 3 || 3));
+      document.getElementById('meta-bonus').textContent = `#${nextBonus}`;
+
+      allPlayers = data.players || [];
+      renderTable();
+      renderMotm();
+    })
+    .catch(() => {
+      document.getElementById('tbody').innerHTML =
+        '<tr><td colspan="9" style="text-align:center;color:#3a6040;padding:40px">Errore nel caricamento dati</td></tr>';
+    });
+</script>
+</body>
+</html>
