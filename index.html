@@ -291,7 +291,7 @@
 
     .modal-extra {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: #0d1f3c;
       border-top: 1px solid #0d1f3c;
@@ -433,14 +433,19 @@
     img.src = `photos/${slug}.jpg`;
 
     /* stat boxes */
+    const ga = (p.gol || 0) + (p.assist || 0);
     document.getElementById('modal-stats').innerHTML = `
+      <div class="stat-box highlight"><div class="val">${p.gol || 0}</div><div class="lbl">⚽ Gol</div></div>
+      <div class="stat-box highlight"><div class="val">${p.assist || 0}</div><div class="lbl">🎯 Assist</div></div>
+      <div class="stat-box highlight"><div class="val">${ga}</div><div class="lbl">G/A Totali</div></div>
+    `;
+    document.getElementById('modal-extra').innerHTML = `
       <div class="stat-box"><div class="val">${p.presenze}</div><div class="lbl">Presenze</div></div>
       <div class="stat-box"><div class="val">${p.vittorie}</div><div class="lbl">Vittorie</div></div>
       <div class="stat-box"><div class="val">${p.pareggi}</div><div class="lbl">Pareggi</div></div>
-    `;
-    document.getElementById('modal-extra').innerHTML = `
       <div class="stat-box"><div class="val">${p.sconfitte}</div><div class="lbl">Sconfitte</div></div>
-      <div class="stat-box highlight"><div class="val">${p.motm}</div><div class="lbl">MoTM ⭐</div></div>
+      <div class="stat-box"><div class="val">${p.motm}</div><div class="lbl">MoTM ⭐</div></div>
+      <div class="stat-box"><div class="val">${p.punti_bonus}</div><div class="lbl">Pt Bonus</div></div>
     `;
 
     document.getElementById('modal-overlay').classList.add('open');
