@@ -21,7 +21,7 @@
     { "name": "Ghigo",         "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Gioele",        "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 1, "assist": 4 },
     { "name": "Jack",          "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
-    { "name": "Jacopo",        "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 1, "assist": 0 },
+    { "name": "Jacopo",        "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Carle",         "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 0, "gol": 2, "assist": 1 },
     { "name": "Leo",           "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Lillo",         "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 1, "punti_bonus": 0, "gol": 1, "assist": 1 },
@@ -35,5 +35,29 @@
     { "name": "Patrick",       "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Simone",        "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Willy",         "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 }
+  ],
+  "partite": [
+    {
+      "id": 1,
+      "data": "2026-05-14",
+      "tipo": "normale",
+      "colorati": ["Debbe", "Andre", "Micheletti", "Felice", "Gabri", "Gioele"],
+      "bianchi": ["Christian A.", "Aronne", "Nico Cugno", "Carle", "Lillo", "Matte", "Gabriele G"],
+      "gol_colorati": 9,
+      "gol_bianchi": 6,
+      "vincitore": "colorati",
+      "marcatori": [
+        { "nome": "Debbe",      "g": 3, "a": 1 },
+        { "nome": "Gabri",      "g": 2, "a": 0 },
+        { "nome": "Micheletti", "g": 2, "a": 1 },
+        { "nome": "Gioele",     "g": 1, "a": 4 },
+        { "nome": "Carle",      "g": 2, "a": 1 },
+        { "nome": "Matte",      "g": 2, "a": 0 },
+        { "nome": "Lillo",      "g": 1, "a": 1 },
+        { "nome": "Gabriele G", "g": 1, "a": 2 },
+        { "nome": "Aronne",     "g": 0, "a": 1 }
+      ],
+      "motm": ["Debbe", "Lillo"]
+    }
   ]
 }

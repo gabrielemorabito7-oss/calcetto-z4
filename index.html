@@ -17,100 +17,70 @@
       min-height: 100vh;
     }
 
-    /* ── HEADER ── */
     header {
       background: linear-gradient(160deg, #03080f, #0d1f3c);
       padding: 26px 20px 18px;
       text-align: center;
       border-bottom: 4px solid #1565c0;
     }
-    header h1 {
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      color: #fff;
-      letter-spacing: 2px;
-      text-shadow: 0 0 24px rgba(21,101,192,0.5);
-    }
+    header h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); color: #fff; letter-spacing: 2px; text-shadow: 0 0 24px rgba(21,101,192,0.5); }
     header h1 span { color: #2979ff; }
     header .season { color: #90b4d8; margin-top: 4px; font-size: 0.85rem; }
 
-    /* ── META BAR ── */
     .meta-bar {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px 28px;
-      padding: 10px 20px;
-      background: #0a1628;
-      font-size: 0.78rem;
-      color: #90b4d8;
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 6px 28px; padding: 10px 20px;
+      background: #0a1628; font-size: 0.78rem; color: #90b4d8;
       border-bottom: 1px solid #1565c033;
     }
     .meta-bar b { color: #2979ff; }
 
-    /* ── MAIN LAYOUT ── */
     .page { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
     .columns {
       display: grid;
-      grid-template-columns: 1fr 300px;
+      grid-template-columns: 1fr 280px;
       gap: 20px;
       align-items: start;
     }
+    .right-col { display: flex; flex-direction: column; gap: 16px; }
 
-    /* ── CARD ── */
     .card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(21,101,192,0.08);
       overflow: hidden;
     }
+    .card + .card { margin-top: 20px; }
     .card-title {
-      background: #1565c0;
-      color: #fff;
-      padding: 12px 18px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #1565c0; color: #fff;
+      padding: 11px 16px;
+      font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
     }
-    .card-title .toggle-btn {
-      background: none;
-      border: 1px solid #ffffff55;
-      color: #fff;
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 0.7rem;
-      cursor: pointer;
-      transition: background 0.2s;
+    .card-title-btns { display: flex; gap: 6px; }
+    .pill-btn {
+      background: none; border: 1px solid #ffffff55; color: #fff;
+      padding: 3px 10px; border-radius: 12px; font-size: 0.68rem;
+      cursor: pointer; transition: background 0.2s; white-space: nowrap;
     }
-    .card-title .toggle-btn:hover { background: #ffffff22; }
+    .pill-btn:hover { background: #ffffff22; }
+    .pill-btn.copied { background: #ffffff33; }
 
     /* ── CLASSIFICA TABLE ── */
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
-
     thead tr { background: #f0f4ff; }
     th {
-      color: #1565c0;
-      padding: 10px 10px;
-      text-align: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 2px solid #dce8ff;
-      white-space: nowrap;
+      color: #1565c0; padding: 10px 10px; text-align: center;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; border-bottom: 2px solid #dce8ff; white-space: nowrap;
     }
     th.left, td.left { text-align: left; padding-left: 14px; }
-
     td {
-      padding: 10px 10px;
-      text-align: center;
-      border-bottom: 1px solid #f0f4f8;
-      color: #111 !important;
+      padding: 10px 10px; text-align: center;
+      border-bottom: 1px solid #f0f4f8; color: #111 !important;
       transition: background 0.15s;
     }
     tbody tr:hover td { background: #f5f8ff; }
@@ -122,129 +92,110 @@
     .bronze { color: #b87040; font-size: 1rem; }
 
     .name-btn {
-      background: none;
-      border: none;
-      color: #111 !important;
-      font-weight: 600;
-      font-size: 0.87rem;
-      cursor: pointer;
-      padding: 0;
-      text-align: left;
-      transition: color 0.15s;
+      background: none; border: none; color: #111 !important;
+      font-weight: 600; font-size: 0.87rem; cursor: pointer;
+      padding: 0; text-align: left; transition: color 0.15s;
     }
-    .name-btn:hover { color: #1565c0 !important; }
-
+    .name-btn:hover { color: #1565c0 !important; text-decoration: underline; }
     .pts-cell { font-weight: 800; font-size: 1rem; color: #1565c0 !important; }
     .dim { color: #ccd5e0 !important; }
 
-    /* ── MARCATORI TABLE ── */
-    .marcatori-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
-    .marcatori-table th {
-      color: #1565c0;
-      padding: 10px 12px;
-      text-align: left;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 2px solid #dce8ff;
-      background: #f0f4ff;
-    }
-    .marcatori-table th:last-child { text-align: center; }
-    .marcatori-table td {
-      padding: 9px 12px;
-      border-bottom: 1px solid #f0f4f8;
-      color: #111 !important;
-    }
-    .marcatori-table td:last-child { text-align: center; font-weight: 700; color: #1565c0 !important; }
-    .marcatori-table tbody tr:hover td { background: #f5f8ff; }
-    .marcatori-table .rank { color: #aab8cc; font-weight: 700; width: 28px; }
+    /* ── MINI TABLES (marcatori / assist) ── */
+    .mini-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    .mini-table td { padding: 8px 12px; border-bottom: 1px solid #f0f4f8; color: #111 !important; }
+    .mini-table tbody tr:hover td { background: #f5f8ff; }
+    .mini-table .rank { color: #aab8cc; font-weight: 700; width: 24px; font-size: 0.75rem; }
+    .mini-table .val-cell { text-align: right; font-weight: 800; color: #1565c0 !important; }
     .bar-wrap { display: flex; align-items: center; gap: 6px; }
-    .bar {
-      height: 6px;
-      background: #1565c0;
-      border-radius: 3px;
-      min-width: 4px;
-      transition: width 0.3s;
-    }
+    .bar { height: 5px; background: #1565c0; border-radius: 3px; min-width: 3px; }
 
     /* ── MOTM ── */
-    .motm-section { padding: 14px 18px; border-top: 1px solid #f0f4f8; display: none; }
-    .motm-label { font-size: 0.7rem; color: #1565c0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+    .motm-section { padding: 12px 16px; border-top: 1px solid #f0f4f8; display: none; }
+    .motm-label { font-size: 0.68rem; color: #1565c0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 7px; }
     .motm-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-    .motm-card {
-      background: #f0f4ff;
-      border: 1px solid #dce8ff;
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 0.78rem;
-      color: #111;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .motm-chip {
+      background: #f0f4ff; border: 1px solid #dce8ff; border-radius: 20px;
+      padding: 3px 11px; font-size: 0.76rem; color: #111;
+      display: flex; align-items: center; gap: 5px;
     }
-    .motm-card .star { color: #f0a800; }
-    .motm-card .count { color: #1565c0; font-weight: 700; }
+    .motm-chip .star { color: #f0a800; }
+    .motm-chip .cnt { color: #1565c0; font-weight: 700; font-size: 0.7rem; }
+
+    /* ── STORICO ── */
+    .storico-card { margin-top: 20px; }
+    .storico-list { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+    .match-card {
+      border: 1px solid #e8eef8; border-radius: 10px; overflow: hidden;
+    }
+    .match-card.bonus { border-color: #f0a800; }
+    .match-head {
+      background: #f5f8ff; padding: 10px 14px;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      border-bottom: 1px solid #e8eef8;
+    }
+    .match-num { font-weight: 800; color: #1565c0; font-size: 0.8rem; }
+    .match-date { color: #778899; font-size: 0.75rem; }
+    .tipo-badge {
+      font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+      background: #e8eef8; color: #1565c0; text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .tipo-badge.bonus { background: #fff3cc; color: #c07800; }
+    .match-score {
+      margin-left: auto; font-weight: 800; font-size: 0.9rem;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .score-colorati { color: #e67e00; }
+    .score-bianchi  { color: #445566; }
+    .score-sep { color: #aab8cc; font-weight: 400; }
+    .team-badge {
+      font-size: 0.68rem; font-weight: 700; padding: 1px 7px;
+      border-radius: 8px; text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .badge-colorati { background: #fff3e0; color: #e67e00; }
+    .badge-bianchi  { background: #f0f4f8; color: #445566; }
+    .badge-winner   { box-shadow: 0 0 0 1.5px currentColor; }
+
+    .match-body { padding: 10px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .match-team-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+    .match-team-title.colorati { color: #e67e00; }
+    .match-team-title.bianchi  { color: #445566; }
+    .scorer-row { font-size: 0.78rem; color: #333; padding: 1px 0; }
+    .scorer-row .gol-cnt { font-weight: 700; color: #1565c0; }
+    .match-motm { grid-column: 1/-1; font-size: 0.76rem; color: #778899; padding-top: 4px; border-top: 1px solid #f0f4f8; }
+    .match-motm b { color: #f0a800; }
 
     /* ── RULES ── */
     .rules-card { margin-top: 20px; }
     .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 6px;
-      padding: 16px 18px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 6px; padding: 14px 16px;
     }
     .rule-item {
-      background: #f5f8ff;
-      border: 1px solid #dce8ff;
-      border-radius: 6px;
-      padding: 7px 12px;
-      font-size: 0.78rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #333;
+      background: #f5f8ff; border: 1px solid #dce8ff; border-radius: 6px;
+      padding: 7px 12px; font-size: 0.76rem;
+      display: flex; justify-content: space-between; align-items: center; color: #333;
     }
     .rule-item .badge { color: #1565c0; font-weight: 700; }
     .rule-item .badge.neg { color: #e53935; }
     .bonus-rules {
-      margin: 0 18px 16px;
-      background: #f5f8ff;
-      border: 1px solid #dce8ff;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 0.8rem;
-      line-height: 1.9;
-      color: #444;
+      margin: 0 16px 14px; background: #f5f8ff; border: 1px solid #dce8ff;
+      border-radius: 8px; padding: 11px 14px; font-size: 0.78rem;
+      line-height: 1.9; color: #444;
     }
     .bonus-rules b { color: #1565c0; }
 
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: #aab8cc;
-      font-size: 0.72rem;
-    }
+    footer { text-align: center; padding: 24px; color: #aab8cc; font-size: 0.72rem; }
 
     /* ── MODAL ── */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 100;
+      align-items: center; justify-content: center; padding: 20px;
     }
     .modal-overlay.open { display: flex; }
     .modal {
-      background: #fff;
-      border-radius: 16px;
-      max-width: 420px;
-      width: 100%;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(21,101,192,0.2);
+      background: #fff; border-radius: 16px; max-width: 420px; width: 100%;
+      overflow: hidden; box-shadow: 0 8px 40px rgba(21,101,192,0.2);
       animation: slideUp 0.2s ease;
     }
     @keyframes slideUp {
@@ -253,52 +204,43 @@
     }
     .modal-header {
       background: linear-gradient(135deg, #0d1f3c, #1565c0);
-      padding: 22px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      position: relative;
+      padding: 20px; display: flex; align-items: center; gap: 14px; position: relative;
     }
     .modal-close {
       position: absolute; top: 12px; right: 14px;
-      background: none; border: none;
-      color: #ffffff88; font-size: 1.3rem;
-      cursor: pointer; transition: color 0.15s;
+      background: none; border: none; color: #ffffff88;
+      font-size: 1.3rem; cursor: pointer; transition: color 0.15s;
     }
     .modal-close:hover { color: #fff; }
-    .player-photo {
-      width: 72px; height: 72px; border-radius: 50%;
-      object-fit: cover; border: 3px solid #fff; flex-shrink: 0;
-    }
+    .player-photo { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; flex-shrink: 0; }
     .player-photo-placeholder {
-      width: 72px; height: 72px; border-radius: 50%;
-      border: 3px solid #ffffff55; background: #1565c0;
+      width: 68px; height: 68px; border-radius: 50%;
+      border: 3px solid #ffffff55; background: #1a4a8a;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; flex-shrink: 0;
+      font-size: 1.7rem; flex-shrink: 0;
     }
-    .modal-name { font-size: 1.3rem; font-weight: 800; color: #fff; }
-    .modal-pts  { font-size: 2rem; font-weight: 900; color: #fff; line-height: 1; }
-    .modal-pts-label { font-size: 0.65rem; color: #ffffffaa; text-transform: uppercase; }
-    .modal-rank { font-size: 0.8rem; color: #ffffffcc; margin-top: 2px; }
-    .modal-stats {
+    .modal-name { font-size: 1.25rem; font-weight: 800; color: #fff; }
+    .modal-pts  { font-size: 1.9rem; font-weight: 900; color: #fff; line-height: 1; }
+    .modal-pts-label { font-size: 0.62rem; color: #ffffffaa; text-transform: uppercase; }
+    .modal-rank { font-size: 0.78rem; color: #ffffffcc; margin-top: 2px; }
+    .modal-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: #eef2f7; border-top: 1px solid #eef2f7;
+      gap: 1px; background: #eef2f7;
     }
-    .modal-extra {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: #eef2f7; border-top: 1px solid #eef2f7;
-    }
-    .stat-box { background: #fff; padding: 14px 10px; text-align: center; }
-    .stat-box .val { font-size: 1.4rem; font-weight: 800; color: #111; }
-    .stat-box .lbl { font-size: 0.62rem; color: #778899; text-transform: uppercase; letter-spacing: 0.4px; margin-top: 2px; }
-    .stat-box.highlight .val { color: #1565c0; }
+    .modal-grid.two { grid-template-columns: repeat(2, 1fr); }
+    .stat-box { background: #fff; padding: 12px 8px; text-align: center; }
+    .stat-box .val { font-size: 1.3rem; font-weight: 800; color: #111; }
+    .stat-box .lbl { font-size: 0.6rem; color: #778899; text-transform: uppercase; letter-spacing: 0.4px; margin-top: 2px; }
+    .stat-box.hl .val { color: #1565c0; }
+    .stat-box.green .val { color: #2e7d32; }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
       .columns { grid-template-columns: 1fr; }
       .hide-mobile { display: none; }
     }
     @media (max-width: 480px) {
-      th, td { padding: 8px 6px; font-size: 0.8rem; }
+      th, td { padding: 8px 5px; font-size: 0.78rem; }
+      .match-body { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -308,10 +250,9 @@
   <h1>⚽ Calcetto <span>Z4</span></h1>
   <div class="season" id="season-label">Caricamento...</div>
 </header>
-
 <div class="meta-bar">
-  <span>Partite giocate: <b id="meta-partite">—</b></span>
-  <span>Prossima bonus: partita <b id="meta-bonus">—</b></span>
+  <span>Partite: <b id="meta-partite">—</b></span>
+  <span>Prossima bonus: <b id="meta-bonus">—</b></span>
   <span>Aggiornato: <b id="meta-updated">—</b></span>
 </div>
 
@@ -322,7 +263,10 @@
     <div class="card">
       <div class="card-title">
         🏆 Classifica
-        <button class="toggle-btn" id="toggle-zero">Mostra tutti</button>
+        <div class="card-title-btns">
+          <button class="pill-btn" id="share-btn">📤 Condividi</button>
+          <button class="pill-btn" id="toggle-zero">Mostra tutti</button>
+        </div>
       </div>
       <div class="table-wrap">
         <table>
@@ -348,21 +292,26 @@
       </div>
     </div>
 
-    <!-- MARCATORI -->
-    <div class="card">
-      <div class="card-title">⚽ Classifica Marcatori</div>
-      <table class="marcatori-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Giocatore</th>
-            <th>Gol</th>
-          </tr>
-        </thead>
-        <tbody id="tbody-marcatori"></tbody>
-      </table>
+    <!-- RIGHT COL -->
+    <div class="right-col">
+      <div class="card">
+        <div class="card-title">⚽ Marcatori</div>
+        <table class="mini-table"><tbody id="tbody-gol"></tbody></table>
+      </div>
+      <div class="card">
+        <div class="card-title">🎯 Assist</div>
+        <table class="mini-table"><tbody id="tbody-assist"></tbody></table>
+      </div>
     </div>
 
+  </div>
+
+  <!-- STORICO -->
+  <div class="card storico-card">
+    <div class="card-title">📅 Storico Partite</div>
+    <div class="storico-list" id="storico-list">
+      <div style="text-align:center;color:#aab8cc;padding:20px;font-size:0.82rem">Nessuna partita ancora</div>
+    </div>
   </div>
 
   <!-- REGOLAMENTO -->
@@ -404,12 +353,13 @@
       </div>
       <div style="margin-left:auto;text-align:right">
         <div class="modal-pts" id="modal-pts">0</div>
-        <div class="modal-pts-label">punti</div>
+        <div class="modal-pts-label">punti totali</div>
       </div>
       <button class="modal-close" id="modal-close">✕</button>
     </div>
-    <div class="modal-stats" id="modal-stats"></div>
-    <div class="modal-extra" id="modal-extra"></div>
+    <div class="modal-grid" id="modal-ga"></div>
+    <div class="modal-grid" id="modal-base"></div>
+    <div class="modal-grid two" id="modal-adv"></div>
   </div>
 </div>
 
@@ -417,29 +367,53 @@
   let showAll = false;
   let allPlayers = [];
   let sortedPlayers = [];
+  let globalData = null;
 
+  /* ── toggle ── */
   document.getElementById('toggle-zero').addEventListener('click', () => {
     showAll = !showAll;
     document.getElementById('toggle-zero').textContent = showAll ? 'Nascondi inattivi' : 'Mostra tutti';
     renderTable();
   });
 
+  /* ── modal chiusura ── */
   document.getElementById('modal-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('modal-overlay')) closeModal();
   });
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+  /* ── event delegation nomi ── */
   document.addEventListener('click', e => {
     const btn = e.target.closest('.name-btn[data-name]');
     if (btn) openModal(btn.dataset.name);
   });
 
+  /* ── condividi ── */
+  document.getElementById('share-btn').addEventListener('click', () => {
+    const btn = document.getElementById('share-btn');
+    const pg = globalData?.partite_giocate ?? 0;
+    const date = globalData?.last_updated ?? '';
+    let txt = `⚽ *Calcetto Z4*\n📅 _Aggiornato: ${date} | Partite: ${pg}_\n\n`;
+    const medals = ['🥇','🥈','🥉'];
+    sortedPlayers.filter(p => p.presenze > 0).forEach((p, i) => {
+      txt += `${medals[i] || (i+1)+'.'} ${p.name} — *${p.total} pts*\n`;
+    });
+    txt += `\n🔗 https://gabrielemorabito7-oss.github.io/calcetto-z4/`;
+    navigator.clipboard.writeText(txt).then(() => {
+      btn.textContent = '✅ Copiato!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '📤 Condividi'; btn.classList.remove('copied'); }, 2000);
+    }).catch(() => { btn.textContent = '❌ Errore'; setTimeout(() => { btn.textContent = '📤 Condividi'; }, 2000); });
+  });
+
+  /* ── scoring ── */
   function calcTotal(p) {
     return p.presenze + (p.vittorie * 3) + p.pareggi + p.motm + p.punti_bonus + (p.gol || 0) + (p.assist || 0);
   }
   function fmt(v) { return v === 0 ? '<span class="dim">—</span>' : v; }
 
+  /* ── modal ── */
   function openModal(name) {
     const p = sortedPlayers.find(x => x.name === name);
     if (!p) return;
@@ -448,50 +422,46 @@
     document.getElementById('modal-name').textContent = p.name;
     document.getElementById('modal-pts').textContent = p.total;
     document.getElementById('modal-rank').textContent =
-      rank === 1 ? '🥇 In testa alla classifica' :
-      rank === 2 ? '🥈 2° posto' :
-      rank === 3 ? '🥉 3° posto' : `${rank}° posto`;
+      rank === 1 ? '🥇 In testa' : rank === 2 ? '🥈 2° posto' : rank === 3 ? '🥉 3° posto' : `${rank}° posto`;
 
     const wrap = document.getElementById('modal-photo-wrap');
     const slug = p.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
     const img = new Image();
-    img.onload = () => { wrap.innerHTML = `<img src="photos/${slug}.jpg" class="player-photo" alt="${p.name}">`; };
+    img.onload  = () => { wrap.innerHTML = `<img src="photos/${slug}.jpg" class="player-photo" alt="${p.name}">`; };
     img.onerror = () => { wrap.innerHTML = `<div class="player-photo-placeholder">👤</div>`; };
     img.src = `photos/${slug}.jpg`;
 
-    const ga = (p.gol || 0) + (p.assist || 0);
-    document.getElementById('modal-stats').innerHTML = `
-      <div class="stat-box highlight"><div class="val">${p.gol||0}</div><div class="lbl">⚽ Gol</div></div>
-      <div class="stat-box highlight"><div class="val">${p.assist||0}</div><div class="lbl">🎯 Assist</div></div>
-      <div class="stat-box highlight"><div class="val">${ga}</div><div class="lbl">G/A Totali</div></div>`;
-    document.getElementById('modal-extra').innerHTML = `
+    const ga = (p.gol||0) + (p.assist||0);
+    document.getElementById('modal-ga').innerHTML = `
+      <div class="stat-box hl"><div class="val">${p.gol||0}</div><div class="lbl">⚽ Gol</div></div>
+      <div class="stat-box hl"><div class="val">${p.assist||0}</div><div class="lbl">🎯 Assist</div></div>
+      <div class="stat-box hl"><div class="val">${ga}</div><div class="lbl">G/A Tot.</div></div>`;
+    document.getElementById('modal-base').innerHTML = `
       <div class="stat-box"><div class="val">${p.presenze}</div><div class="lbl">Presenze</div></div>
       <div class="stat-box"><div class="val">${p.vittorie}</div><div class="lbl">Vittorie</div></div>
-      <div class="stat-box"><div class="val">${p.pareggi}</div><div class="lbl">Pareggi</div></div>
-      <div class="stat-box"><div class="val">${p.sconfitte}</div><div class="lbl">Sconfitte</div></div>
-      <div class="stat-box"><div class="val">${p.motm}</div><div class="lbl">MoTM ⭐</div></div>
-      <div class="stat-box"><div class="val">${p.punti_bonus}</div><div class="lbl">Pt Bonus</div></div>`;
+      <div class="stat-box"><div class="val">${p.sconfitte}</div><div class="lbl">Sconfitte</div></div>`;
+
+    const wr = p.presenze > 0 ? Math.round(p.vittorie / p.presenze * 100) : 0;
+    const avg = p.presenze > 0 ? (p.total / p.presenze).toFixed(1) : '—';
+    document.getElementById('modal-adv').innerHTML = `
+      <div class="stat-box green"><div class="val">${wr}%</div><div class="lbl">Win Rate</div></div>
+      <div class="stat-box green"><div class="val">${avg}</div><div class="lbl">Media Pts</div></div>`;
 
     document.getElementById('modal-overlay').classList.add('open');
   }
   function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); }
 
+  /* ── classifica ── */
   function renderTable() {
     const active   = sortedPlayers.filter(p => p.presenze > 0);
     const inactive = sortedPlayers.filter(p => p.presenze === 0);
     const tbody = document.getElementById('tbody');
     tbody.innerHTML = '';
-
     let rank = 1, prevTotal = null, shownRank = 1;
     active.forEach(p => {
       if (p.total !== prevTotal) shownRank = rank;
-      prevTotal = p.total;
-      rank++;
-      const pos =
-        shownRank === 1 ? '<span class="gold">🥇</span>' :
-        shownRank === 2 ? '<span class="silver">🥈</span>' :
-        shownRank === 3 ? '<span class="bronze">🥉</span>' :
-        `<span class="pos-cell">${shownRank}</span>`;
+      prevTotal = p.total; rank++;
+      const pos = shownRank===1 ? '<span class="gold">🥇</span>' : shownRank===2 ? '<span class="silver">🥈</span>' : shownRank===3 ? '<span class="bronze">🥉</span>' : `<span class="pos-cell">${shownRank}</span>`;
       tbody.innerHTML += `<tr>
         <td>${pos}</td>
         <td class="left"><button class="name-btn" data-name="${p.name.replace(/"/g,'&quot;')}">${p.name}</button></td>
@@ -502,7 +472,6 @@
         <td class="pts-cell">${p.total}</td>
       </tr>`;
     });
-
     if (showAll && inactive.length > 0) {
       inactive.forEach((p, i) => {
         tbody.innerHTML += `<tr${i===0?' class="separator"':''}>
@@ -518,44 +487,98 @@
     }
   }
 
-  function renderMarcatori() {
-    const scorers = [...allPlayers]
-      .filter(p => (p.gol || 0) > 0)
-      .sort((a, b) => (b.gol || 0) - (a.gol || 0));
-    const max = scorers[0]?.gol || 1;
-    const tbody = document.getElementById('tbody-marcatori');
+  /* ── marcatori / assist ── */
+  function renderMiniTable(tbodyId, field, icon) {
+    const list = [...allPlayers].filter(p => (p[field]||0) > 0).sort((a,b) => (b[field]||0)-(a[field]||0));
+    const max = list[0]?.[field] || 1;
+    const tbody = document.getElementById(tbodyId);
     tbody.innerHTML = '';
-    scorers.forEach((p, i) => {
-      const barW = Math.round((p.gol / max) * 80);
+    if (!list.length) {
+      tbody.innerHTML = `<tr><td colspan="3" style="text-align:center;color:#aab8cc;padding:16px;font-size:0.78rem">Nessun dato</td></tr>`;
+      return;
+    }
+    list.forEach((p, i) => {
+      const w = Math.round((p[field] / max) * 70);
       tbody.innerHTML += `<tr>
         <td class="rank">${i+1}</td>
         <td><button class="name-btn" data-name="${p.name.replace(/"/g,'&quot;')}">${p.name}</button></td>
-        <td>
-          <div class="bar-wrap">
-            <div class="bar" style="width:${barW}px"></div>
-            <span style="color:#1565c0;font-weight:700">${p.gol}</span>
+        <td class="val-cell">
+          <div class="bar-wrap" style="justify-content:flex-end">
+            <div class="bar" style="width:${w}px"></div>
+            ${icon} ${p[field]}
           </div>
         </td>
       </tr>`;
     });
-    if (!scorers.length) {
-      tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;color:#aab8cc;padding:20px;font-size:0.8rem">Nessun gol ancora</td></tr>';
-    }
   }
 
+  /* ── motm ── */
   function renderMotm() {
-    const withMotm = allPlayers.filter(p => p.motm > 0).sort((a,b) => b.motm - a.motm);
-    const section = document.getElementById('motm-section');
-    if (!withMotm.length) { section.style.display = 'none'; return; }
-    section.style.display = 'block';
-    document.getElementById('motm-grid').innerHTML = withMotm.map(p =>
-      `<div class="motm-card"><span class="star">⭐</span>${p.name}<span class="count">×${p.motm}</span></div>`
+    const list = allPlayers.filter(p => p.motm > 0).sort((a,b) => b.motm - a.motm);
+    const sec = document.getElementById('motm-section');
+    if (!list.length) { sec.style.display = 'none'; return; }
+    sec.style.display = 'block';
+    document.getElementById('motm-grid').innerHTML = list.map(p =>
+      `<div class="motm-chip"><span class="star">⭐</span>${p.name}<span class="cnt">×${p.motm}</span></div>`
     ).join('');
   }
 
+  /* ── storico ── */
+  function formatDate(d) {
+    const mesi = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+    const [y,m,g] = d.split('-');
+    return `${parseInt(g)} ${mesi[parseInt(m)-1]} ${y}`;
+  }
+
+  function renderStorico(partite) {
+    const container = document.getElementById('storico-list');
+    if (!partite || !partite.length) return;
+    container.innerHTML = '';
+    [...partite].reverse().forEach(p => {
+      const winC = p.vincitore === 'colorati';
+      const winB = p.vincitore === 'bianchi';
+      const marcC = p.marcatori.filter(m => p.colorati.includes(m.nome) && m.g > 0);
+      const marcB = p.marcatori.filter(m => p.bianchi.includes(m.nome) && m.g > 0);
+      const scorerRow = m => {
+        let s = `<div class="scorer-row"><span class="gol-cnt">${m.g}⚽</span> ${m.nome}`;
+        if (m.a > 0) s += ` <span style="color:#778899;font-size:0.72rem">(${m.a}🎯)</span>`;
+        s += '</div>';
+        return s;
+      };
+      container.innerHTML += `
+        <div class="match-card${p.tipo==='bonus'?' bonus':''}">
+          <div class="match-head">
+            <span class="match-num">#${p.id}</span>
+            <span class="match-date">${formatDate(p.data)}</span>
+            <span class="tipo-badge${p.tipo==='bonus'?' bonus':''}">${p.tipo==='bonus'?'🎁 Bonus':'Normale'}</span>
+            <div class="match-score">
+              <span class="team-badge badge-colorati${winC?' badge-winner':''}">🟡 Colorati</span>
+              <span class="score-colorati">${p.gol_colorati}</span>
+              <span class="score-sep">—</span>
+              <span class="score-bianchi">${p.gol_bianchi}</span>
+              <span class="team-badge badge-bianchi${winB?' badge-winner':''}">⬜ Bianchi</span>
+            </div>
+          </div>
+          <div class="match-body">
+            <div>
+              <div class="match-team-title colorati">🟡 Colorati</div>
+              ${marcC.length ? marcC.map(scorerRow).join('') : '<div class="scorer-row" style="color:#aab8cc">—</div>'}
+            </div>
+            <div>
+              <div class="match-team-title bianchi">⬜ Bianchi</div>
+              ${marcB.length ? marcB.map(scorerRow).join('') : '<div class="scorer-row" style="color:#aab8cc">—</div>'}
+            </div>
+            ${p.motm?.length ? `<div class="match-motm"><b>⭐ MoTM:</b> ${p.motm.join(', ')}</div>` : ''}
+          </div>
+        </div>`;
+    });
+  }
+
+  /* ── fetch ── */
   fetch('data.json?t=' + Date.now())
     .then(r => r.json())
     .then(data => {
+      globalData = data;
       document.getElementById('season-label').textContent = data.stagione || 'Classifica Live';
       document.getElementById('meta-partite').textContent = data.partite_giocate ?? 0;
       document.getElementById('meta-updated').textContent = data.last_updated ?? '—';
@@ -565,15 +588,16 @@
       allPlayers = data.players || [];
       sortedPlayers = [...allPlayers]
         .map(p => ({ ...p, total: calcTotal(p) }))
-        .sort((a, b) => b.total - a.total || b.presenze - a.presenze || a.name.localeCompare(b.name));
+        .sort((a,b) => b.total - a.total || b.presenze - a.presenze || a.name.localeCompare(b.name));
 
       renderTable();
-      renderMarcatori();
+      renderMiniTable('tbody-gol', 'gol', '⚽');
+      renderMiniTable('tbody-assist', 'assist', '🎯');
       renderMotm();
+      renderStorico(data.partite);
     })
     .catch(() => {
-      document.getElementById('tbody').innerHTML =
-        '<tr><td colspan="9" style="text-align:center;color:#aab8cc;padding:40px">Errore caricamento dati</td></tr>';
+      document.getElementById('tbody').innerHTML = '<tr><td colspan="9" style="text-align:center;color:#aab8cc;padding:40px">Errore caricamento</td></tr>';
     });
 </script>
 </body>
