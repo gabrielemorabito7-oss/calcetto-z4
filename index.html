@@ -430,6 +430,11 @@
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.name-btn[data-name]');
+    if (btn) openModal(btn.dataset.name);
+  });
+
   function calcTotal(p) {
     return p.presenze + (p.vittorie * 3) + p.pareggi + p.motm + p.punti_bonus + (p.gol || 0) + (p.assist || 0);
   }
@@ -489,7 +494,7 @@
         `<span class="pos-cell">${shownRank}</span>`;
       tbody.innerHTML += `<tr>
         <td>${pos}</td>
-        <td class="left"><button class="name-btn" onclick="openModal('${p.name.replace(/'/g,"\\'")}'">${p.name}</button></td>
+        <td class="left"><button class="name-btn" data-name="${p.name.replace(/"/g,'&quot;')}">${p.name}</button></td>
         <td>${fmt(p.presenze)}</td><td>${fmt(p.vittorie)}</td>
         <td class="hide-mobile">${fmt(p.pareggi)}</td>
         <td>${fmt(p.sconfitte)}</td><td>${fmt(p.motm)}</td>
@@ -502,7 +507,7 @@
       inactive.forEach((p, i) => {
         tbody.innerHTML += `<tr${i===0?' class="separator"':''}>
           <td><span class="dim">—</span></td>
-          <td class="left"><button class="name-btn" style="color:#ccd5e0!important" onclick="openModal('${p.name.replace(/'/g,"\\'")}'">${p.name}</button></td>
+          <td class="left"><button class="name-btn" style="color:#ccd5e0!important" data-name="${p.name.replace(/"/g,'&quot;')}">${p.name}</button></td>
           <td><span class="dim">—</span></td><td><span class="dim">—</span></td>
           <td class="hide-mobile"><span class="dim">—</span></td>
           <td><span class="dim">—</span></td><td><span class="dim">—</span></td>
@@ -524,7 +529,7 @@
       const barW = Math.round((p.gol / max) * 80);
       tbody.innerHTML += `<tr>
         <td class="rank">${i+1}</td>
-        <td><button class="name-btn" onclick="openModal('${p.name.replace(/'/g,"\\'")}'">${p.name}</button></td>
+        <td><button class="name-btn" data-name="${p.name.replace(/"/g,'&quot;')}">${p.name}</button></td>
         <td>
           <div class="bar-wrap">
             <div class="bar" style="width:${barW}px"></div>
