@@ -31,8 +31,8 @@
     { "name": "Matte Bru",     "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Matteo B.",     "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 1, "gol": 0, "assist": 0 },
     { "name": "Micheletti",    "presenze": 2, "vittorie": 2, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 4, "assist": 3 },
-    { "name": "Nico Cugno",    "presenze": 2, "vittorie": 1, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
-    { "name": "Patrick",       "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 1 },
+    { "name": "Nico Cugno",    "presenze": 2, "vittorie": 1, "pareggi": 0, "sconfitte": 1, "motm": 1, "punti_bonus": 0, "gol": 0, "assist": 0 },
+    { "name": "Patrick",       "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 1, "punti_bonus": 0, "gol": 0, "assist": 1 },
     { "name": "Simone",        "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Willy",         "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 }
   ],
@@ -78,7 +78,7 @@
         { "nome": "Cesare",     "g": 0, "a": 2 },
         { "nome": "Patrick",    "g": 0, "a": 1 }
       ],
-      "motm": []
+      "motm": ["Patrick", "Nico Cugno"]
     }
   ]
 }
