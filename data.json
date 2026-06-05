@@ -7,7 +7,7 @@
     { "name": "Aronne",        "presenze": 3, "vittorie": 2, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 2, "gol": 1, "assist": 1 },
     { "name": "Buza",          "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Cesare",        "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 2 },
-    { "name": "Christian A.",  "presenze": 4, "vittorie": 3, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 6, "gol": 0, "assist": 1 },
+    { "name": "Christian A.",  "presenze": 4, "vittorie": 3, "pareggi": 0, "sconfitte": 1, "motm": 1, "punti_bonus": 8, "gol": 0, "assist": 1 },
     { "name": "Ciro",          "presenze": 3, "vittorie": 3, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 3, "gol": 1, "assist": 3 },
     { "name": "Cri Domi",      "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 3, "gol": 0, "assist": 1 },
     { "name": "Debbe",         "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 1, "punti_bonus": 1, "gol": 3, "assist": 1 },
@@ -29,7 +29,7 @@
     { "name": "Luca Cav.",     "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Matte",         "presenze": 4, "vittorie": 3, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 3, "gol": 9, "assist": 2 },
     { "name": "Matte Bru",     "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
-    { "name": "Matteo B.",     "presenze": 2, "vittorie": 0, "pareggi": 0, "sconfitte": 2, "motm": 0, "punti_bonus": 1, "gol": 0, "assist": 0 },
+    { "name": "Matteo B.",     "presenze": 2, "vittorie": 0, "pareggi": 0, "sconfitte": 2, "motm": 1, "punti_bonus": 2, "gol": 0, "assist": 0 },
     { "name": "Mattia",        "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 1, "gol": 1, "assist": 0 },
     { "name": "Micheletti",    "presenze": 4, "vittorie": 2, "pareggi": 0, "sconfitte": 2, "motm": 0, "punti_bonus": 0, "gol": 4, "assist": 6 },
     { "name": "Nico Cugno",    "presenze": 4, "vittorie": 3, "pareggi": 0, "sconfitte": 1, "motm": 1, "punti_bonus": 6, "gol": 0, "assist": 1 },
@@ -127,7 +127,7 @@
         { "nome": "Micheletti",   "g": 0, "a": 2 },
         { "nome": "Gabri",        "g": 0, "a": 1 }
       ],
-      "motm": []
+      "motm": ["Christian A.", "Matteo B."]
     }
   ]
 }
