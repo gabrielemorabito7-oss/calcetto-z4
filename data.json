@@ -25,7 +25,7 @@
     { "name": "Carle",         "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 0, "gol": 2, "assist": 1 },
     { "name": "Leo",           "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Lillo",         "presenze": 4, "vittorie": 1, "pareggi": 0, "sconfitte": 3, "motm": 2, "punti_bonus": 6, "gol": 10, "assist": 5 },
-    { "name": "Lore",          "presenze": 3, "vittorie": 1, "pareggi": 0, "sconfitte": 2, "motm": 1, "punti_bonus": 1, "gol": 11, "assist": 6 },
+    { "name": "Lore",          "presenze": 3, "vittorie": 1, "pareggi": 0, "sconfitte": 2, "motm": 1, "punti_bonus": 1, "gol": 10, "assist": 6 },
     { "name": "Luca Cav.",     "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 1, "gol": 0, "assist": 0 },
     { "name": "Matte",         "presenze": 5, "vittorie": 3, "pareggi": 0, "sconfitte": 2, "motm": 0, "punti_bonus": 3, "gol": 12, "assist": 3 },
     { "name": "Matteo B.",     "presenze": 2, "vittorie": 0, "pareggi": 0, "sconfitte": 2, "motm": 1, "punti_bonus": 2, "gol": 0, "assist": 0 },
@@ -141,7 +141,7 @@
       "gol_bianchi": 9,
       "vincitore": "colorati",
       "marcatori": [
-        { "nome": "Lore",       "g": 4, "a": 5 },
+        { "nome": "Lore",       "g": 3, "a": 5 },
         { "nome": "Debbe",      "g": 2, "a": 1 },
         { "nome": "Davide A.",  "g": 2, "a": 1 },
         { "nome": "Gabri",      "g": 2, "a": 1 },
