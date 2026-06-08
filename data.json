@@ -15,7 +15,7 @@
     { "name": "Federico Bre",  "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Felice",        "presenze": 3, "vittorie": 2, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 4, "gol": 1, "assist": 0 },
     { "name": "Fili",          "presenze": 4, "vittorie": 1, "pareggi": 0, "sconfitte": 3, "motm": 0, "punti_bonus": 0, "gol": 3, "assist": 1 },
-    { "name": "Gabri",         "presenze": 5, "vittorie": 2, "pareggi": 0, "sconfitte": 3, "motm": 0, "punti_bonus": 1, "gol": 5, "assist": 4 },
+    { "name": "Gabri",         "presenze": 5, "vittorie": 2, "pareggi": 0, "sconfitte": 3, "motm": 1, "punti_bonus": 1, "gol": 5, "assist": 4 },
     { "name": "Gabriele G",    "presenze": 4, "vittorie": 2, "pareggi": 0, "sconfitte": 2, "motm": 0, "punti_bonus": 0, "gol": 5, "assist": 7 },
     { "name": "Gabriele Oppe", "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
     { "name": "Ghigo",         "presenze": 0, "vittorie": 0, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 0, "gol": 0, "assist": 0 },
@@ -31,7 +31,7 @@
     { "name": "Matteo B.",     "presenze": 2, "vittorie": 0, "pareggi": 0, "sconfitte": 2, "motm": 1, "punti_bonus": 2, "gol": 0, "assist": 0 },
     { "name": "Mattia",        "presenze": 1, "vittorie": 0, "pareggi": 0, "sconfitte": 1, "motm": 0, "punti_bonus": 1, "gol": 1, "assist": 0 },
     { "name": "Micheletti",    "presenze": 4, "vittorie": 2, "pareggi": 0, "sconfitte": 2, "motm": 0, "punti_bonus": 0, "gol": 4, "assist": 6 },
-    { "name": "Nico Cugno",    "presenze": 5, "vittorie": 3, "pareggi": 0, "sconfitte": 2, "motm": 1, "punti_bonus": 7, "gol": 0, "assist": 1 },
+    { "name": "Nico Cugno",    "presenze": 5, "vittorie": 3, "pareggi": 0, "sconfitte": 2, "motm": 2, "punti_bonus": 7, "gol": 0, "assist": 1 },
     { "name": "Patrick",       "presenze": 3, "vittorie": 0, "pareggi": 0, "sconfitte": 3, "motm": 1, "punti_bonus": 2, "gol": 0, "assist": 1 },
     { "name": "Bruzzo",        "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 1, "gol": 2, "assist": 2 },
     { "name": "Davide A.",     "presenze": 1, "vittorie": 1, "pareggi": 0, "sconfitte": 0, "motm": 0, "punti_bonus": 1, "gol": 2, "assist": 1 },
@@ -152,7 +152,7 @@
         { "nome": "Lillo",      "g": 2, "a": 1 },
         { "nome": "Gabriele G", "g": 1, "a": 3 }
       ],
-      "motm": []
+      "motm": ["Nico Cugno", "Gabri"]
     }
   ]
 }
